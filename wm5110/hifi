@@ -1,0 +1,266 @@
+# Use case Configuration for Mobile device
+# By Inha Song <ideal.song@samsung.com>
+
+SectionVerb {
+  EnableSequence [
+  ]
+  DisableSequence [
+  ]
+
+  Value {
+    TQ "Music"
+    PlaybackCTL "hw:0"
+    CaptureCTL "hw:0"
+  }
+}
+
+SectionDevice."Headphones" {
+  Comment "3.5mm Headphones"
+
+  EnableSequence [
+# Gain
+    cset "name='HPOUT1L Input 1 Volume' 15"
+    cset "name='HPOUT1R Input 1 Volume' 15"
+# Path
+    cset "name='HP Switch' 1"
+    cset "name='HPOUT1L Input 1' 15"
+    cset "name='HPOUT1R Input 1' 16"
+    cset "name='HPOUT1 Digital Switch' 1,1"
+  ]
+
+  DisableSequence [
+# Path
+    cset "name='HP Switch' 0"
+    cset "name='HPOUT1L Input 1' 0"
+    cset "name='HPOUT1R Input 1' 0"
+    cset "name='HPOUT1 Digital Switch' 0,0"
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionDevice."Speaker" {
+  Comment "built-in Speaker"
+
+  EnableSequence [
+# Gain
+    cset "name='HPOUT2L Input 1 Volume' 15"
+# Path
+    cset "name='SPK Switch' 1"
+    cset "name='HPOUT2L Input 1' 15"
+    cset "name='HPOUT2R Input 1' 0"
+    cset "name='HPOUT2 Digital Switch' 1,1"
+  ]
+
+  DisableSequence [
+# Path
+    cset "name='SPK Switch' 0"
+    cset "name='HPOUT2L Input 1' 0"
+    cset "name='HPOUT2R Input 1' 0"
+    cset "name='HPOUT2 Digital Switch' 0,0"
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionDevice."Earpiece" {
+  Comment "built-in earpiece, receiver"
+
+  EnableSequence [
+# Gain
+    cset "name='HPOUT3L Input 1 Volume' 40"
+    cset "name='HPOUT3R Input 1 Volume' 40"
+# Path
+    cset "name='RCV Switch' 1"
+    cset "name='HPOUT3L Input 1' 15"
+    cset "name='HPOUT3R Input 1' 16"
+    cset "name='HPOUT3 Digital Switch' 1,1"
+  ]
+
+  DisableSequence [
+# Path
+    cset "name='RCV Switch' 0"
+    cset "name='HPOUT3L Input 1' 0"
+    cset "name='HPOUT3R Input 1' 0"
+    cset "name='HPOUT3 Digital Switch' 0,0"
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+# Dock Audio Ouput Mode setting not included in Note4
+SectionDevice."Line" {
+  Comment "lineout for dock"
+
+  EnableSequence [
+# Path
+    cset "name='VPS Switch' 1"
+    cset "name='HPOUT2L Input 1' 15"
+    cset "name='HPOUT2R Input 1' 0"
+    cset "name='HPOUT2 Digital Switch' 1,1"
+  ]
+
+  DisableSequence [
+# Path
+    cset "name='VPS Switch' 0"
+    cset "name='HPOUT2L Input 1' 0"
+    cset "name='HPOUT2R Input 1' 0"
+    cset "name='HPOUT2 Digital Switch' 0,0"
+  ]
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionDevice."HDMI" {
+  Comment "playback via HDMI"
+
+  EnableSequence [
+# Path
+    cset "name='HDMI Switch' 1"
+    cset "name='SPKOUTL Input 1' 15"
+  ]
+
+  DisableSequence [
+# Path
+    cset "name='HDMI Switch' 0"
+    cset "name='SPKOUTL Input 1' 0"
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+  }
+}
+
+SectionDevice."Bluetooth" {
+  Comment "bluetooth sco with codec master"
+
+  EnableSequence [
+# Gain
+    cset "name='AIF3TX1 Input 1 Volume' 32"
+    cset "name='AIF1TX1 Input 1 Volume' 32"
+# Path
+    cset "name='AIF3TX1 Input 1' 15"
+    cset "name='AIF1TX1 Input 1' 29"
+  ]
+
+  DisableSequence [
+    cset "name='AIF3TX1 Input 1' 0"
+    cset "name='AIF1TX1 Input 1' 0"
+  ]
+
+  Value {
+    PlaybackPCM "hw:0,0"
+    CapturePCM "hw:0,0"
+  }
+}
+
+SectionDevice."MainMic" {
+  Comment "built-in main mic"
+
+  EnableSequence [
+# Gain
+    cset "name='IN1R Digital Volume' 166"
+    cset "name='AIF1TX1 Input 1 Volume' 32"
+# Path
+    cset "name='Main Mic Switch' 1"
+    cset "name='IN1 OSR' 0"
+    cset "name='IN1R HPF Switch' 1"
+    cset "name='AIF1TX1 Input 1' 8"
+  ]
+
+  DisableSequence [
+# Path
+    cset "name='Main Mic Switch' 0"
+    cset "name='IN1 OSR' 1"
+    cset "name='IN1R HPF Switch' 0"
+    cset "name='AIF1TX1 Input 1' 0"
+  ]
+
+  Value {
+    CapturePCM "hw:0,0"
+  }
+}
+
+SectionDevice."SubMic" {
+  Comment "built-in sub mic"
+
+  EnableSequence [
+# Gain
+    cset "name='IN3L Digital Volume' 166"
+    cset "name='AIF1TX1 Input 1 Volume' 32"
+# Path
+    cset "name='Sub Mic Switch' 1"
+    cset "name='IN3 OSR' 0"
+    cset "name='IN3L HPF Switch' 1"
+    cset "name='AIF1TX1 Input 1' 11"
+  ]
+
+  DisableSequence [
+# Path
+    cset "name='Sub Mic Switch' 0"
+    cset "name='IN3 OSR' 1"
+    cset "name='IN3L HPF Switch' 0"
+    cset "name='AIF1TX1 Input 1' 0"
+  ]
+
+  Value {
+    CapturePCM "hw:0,0"
+  }
+}
+
+SectionDevice."ThirdMic" {
+  Comment "built-in thrid mic"
+
+  EnableSequence [
+# Gain
+    cset "name='IN3R Digital Volume' 166"
+    cset "name='AIF1TX1 Input 1 Volume' 32"
+# Path
+    cset "name='Third Mic Switch' 1"
+    cset "name='IN3 OSR' 0"
+    cset "name='IN3R HPF Switch' 1"
+    cset "name='AIF1TX1 Input 1' 12"
+  ]
+
+  DisableSequence [
+# Path
+    cset "name='Third Mic Switch' 0"
+    cset "name='IN3 OSR' 1"
+    cset "name='IN3R HPF Switch' 0"
+    cset "name='AIF1TX1 Input 1' 0"
+  ]
+
+  Value {
+    CapturePCM "hw:0,0"
+  }
+}
+
+SectionDevice."HeadsetMic" {
+  Comment "external headset mic"
+
+  EnableSequence [
+# Gain
+    cset "name='AIF1TX1 Input 1 Volume' 32"
+    cset "name='IN2R Volume' 32"
+# Path
+    cset "name='Headset Mic Switch' 1"
+    cset "name='AIF1TX1 Input 1' 10"
+  ]
+
+  DisableSequence [
+# Path
+    cset "name='Headset Mic Switch' 0"
+    cset "name='AIF1TX1 Input 1' 0"
+  ]
+
+  Value {
+    CapturePCM "hw:0,0"
+  }
+}

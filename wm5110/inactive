@@ -1,0 +1,102 @@
+# Use case Configuration for Mobile device
+# By Inha Song <ideal.song@samsung.com>
+
+SectionVerb {
+  EnableSequence [
+    cset "name='HP Switch' 0"
+    cset "name='HPOUT1L Input 1' 0"
+    cset "name='HPOUT1R Input 1' 0"
+    cset "name='HPOUT1 Digital Switch' 0,0"
+    cset "name='SPK Switch' 0"
+    cset "name='HPOUT2L Input 1' 0"
+    cset "name='HPOUT2R Input 1' 0"
+    cset "name='HPOUT2 Digital Switch' 0,0"
+    cset "name='RCV Switch' 0"
+    cset "name='HPOUT3L Input 1' 0"
+    cset "name='HPOUT3R Input 1' 0"
+    cset "name='HPOUT3 Digital Switch' 0,0"
+    cset "name='AIF3TX1 Input 1' 0"
+    cset "name='AIF2TX1 Input 1' 0"
+    cset "name='VPS Switch' 0"
+    cset "name='HDMI Switch' 0"
+    cset "name='SPKOUTL Input 1' 0"
+    cset "name='AIF1TX1 Input 1' 0"
+    cset "name='Main Mic Switch' 0"
+    cset "name='IN1 OSR' 1"
+    cset "name='IN1R HPF Switch' 0"
+    cset "name='Sub Mic Switch' 0"
+    cset "name='IN3 OSR' 1"
+    cset "name='IN3L HPF Switch' 0"
+    cset "name='Third Mic Switch' 0"
+    cset "name='IN3R HPF Switch' 0"
+    cset "name='Headset Mic Switch' 0"
+  ]
+  DisableSequence [
+  ]
+
+  Value {
+    TQ "Music"
+    PlaybackCTL "hw:0"
+    CaptureCTL "hw:0"
+  }
+}
+
+SectionDevice."All" {
+  Comment "reset all"
+
+  EnableSequence [
+  ]
+
+  DisableSequence [
+  ]
+}
+
+SectionDevice."Playback" {
+  Comment "reset playback"
+
+  EnableSequence [
+    cset "name='HP Switch' 0"
+    cset "name='HPOUT1L Input 1' 0"
+    cset "name='HPOUT1R Input 1' 0"
+    cset "name='HPOUT1 Digital Switch' 0,0"
+    cset "name='SPK Switch' 0"
+    cset "name='HPOUT2L Input 1' 0"
+    cset "name='HPOUT2R Input 1' 0"
+    cset "name='HPOUT2 Digital Switch' 0,0"
+    cset "name='RCV Switch' 0"
+    cset "name='HPOUT3L Input 1' 0"
+    cset "name='HPOUT3R Input 1' 0"
+    cset "name='HPOUT3 Digital Switch' 0,0"
+    cset "name='AIF3TX1 Input 1' 0"
+    cset "name='AIF2TX1 Input 1' 0"
+    cset "name='VPS Switch' 0"
+    cset "name='HDMI Switch' 0"
+    cset "name='SPKOUTL Input 1' 0"
+    cset "name='AIF1TX1 Input 1' 0"
+  ]
+
+  DisableSequence [
+  ]
+}
+
+SectionDevice."Capture" {
+  Comment "reset capture"
+
+  EnableSequence [
+    cset "name='Main Mic Switch' 0"
+    cset "name='IN1 OSR' 1"
+    cset "name='IN1R HPF Switch' 0"
+    cset "name='AIF2TX1 Input 1' 0"
+    cset "name='Sub Mic Switch' 0"
+    cset "name='IN3 OSR' 1"
+    cset "name='IN3L HPF Switch' 0"
+    cset "name='Third Mic Switch' 0"
+    cset "name='IN3R HPF Switch' 0"
+    cset "name='Headset Mic Switch' 0"
+    cset "name='AIF1TX1 Input 1' 0"
+  ]
+
+  DisableSequence [
+  ]
+}
+
