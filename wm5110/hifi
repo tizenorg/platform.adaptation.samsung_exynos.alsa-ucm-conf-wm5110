@@ -46,7 +46,8 @@ SectionDevice."Speaker" {
 
   EnableSequence [
 # Gain
-    cset "name='HPOUT2L Input 1 Volume' 15"
+    cset "name='HPOUT2L Input 1 Volume' 32"
+    cset "name='HPOUT2R Input 1 Volume' 32"
 # Path
     cset "name='SPK Switch' 1"
     cset "name='HPOUT2L Input 1' 15"
