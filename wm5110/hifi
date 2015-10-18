@@ -51,7 +51,7 @@ SectionDevice."Speaker" {
 # Path
     cset "name='SPK Switch' 1"
     cset "name='HPOUT2L Input 1' 15"
-    cset "name='HPOUT2R Input 1' 16"
+    cset "name='HPOUT2R Input 1' 0"
     cset "name='HPOUT2 Digital Switch' 1,1"
   ]
 
@@ -103,7 +103,7 @@ SectionDevice."Line" {
 # Path
     cset "name='VPS Switch' 1"
     cset "name='HPOUT2L Input 1' 15"
-    cset "name='HPOUT2R Input 1' 16"
+    cset "name='HPOUT2R Input 1' 0"
     cset "name='HPOUT2 Digital Switch' 1,1"
   ]
 
