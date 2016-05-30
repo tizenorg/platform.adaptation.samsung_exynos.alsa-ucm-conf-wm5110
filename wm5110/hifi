@@ -23,16 +23,16 @@ SectionDevice."Headphones" {
     cset "name='HPOUT1R Input 1 Volume' 15"
 # Path
     cset "name='HP Switch' 1"
-    cset "name='HPOUT1L Input 1' 15"
-    cset "name='HPOUT1R Input 1' 16"
+    cset "name='HPOUT1L Input 1' AIF1RX1"
+    cset "name='HPOUT1R Input 1' AIF1RX2"
     cset "name='HPOUT1 Digital Switch' 1,1"
   ]
 
   DisableSequence [
 # Path
     cset "name='HP Switch' 0"
-    cset "name='HPOUT1L Input 1' 0"
-    cset "name='HPOUT1R Input 1' 0"
+    cset "name='HPOUT1L Input 1' None"
+    cset "name='HPOUT1R Input 1' None"
     cset "name='HPOUT1 Digital Switch' 0,0"
   ]
 
@@ -50,16 +50,16 @@ SectionDevice."Speaker" {
     cset "name='HPOUT2R Input 1 Volume' 32"
 # Path
     cset "name='SPK Switch' 1"
-    cset "name='HPOUT2L Input 1' 15"
-    cset "name='HPOUT2R Input 1' 0"
+    cset "name='HPOUT2L Input 1' AIF1RX1"
+    cset "name='HPOUT2R Input 1' None"
     cset "name='HPOUT2 Digital Switch' 1,1"
   ]
 
   DisableSequence [
 # Path
     cset "name='SPK Switch' 0"
-    cset "name='HPOUT2L Input 1' 0"
-    cset "name='HPOUT2R Input 1' 0"
+    cset "name='HPOUT2L Input 1' None"
+    cset "name='HPOUT2R Input 1' None"
     cset "name='HPOUT2 Digital Switch' 0,0"
   ]
 
@@ -77,16 +77,16 @@ SectionDevice."Earpiece" {
     cset "name='HPOUT3R Input 1 Volume' 40"
 # Path
     cset "name='RCV Switch' 1"
-    cset "name='HPOUT3L Input 1' 15"
-    cset "name='HPOUT3R Input 1' 16"
+    cset "name='HPOUT3L Input 1' AIF1RX1"
+    cset "name='HPOUT3R Input 1' AIF1RX2"
     cset "name='HPOUT3 Digital Switch' 1,1"
   ]
 
   DisableSequence [
 # Path
     cset "name='RCV Switch' 0"
-    cset "name='HPOUT3L Input 1' 0"
-    cset "name='HPOUT3R Input 1' 0"
+    cset "name='HPOUT3L Input 1' None"
+    cset "name='HPOUT3R Input 1' None"
     cset "name='HPOUT3 Digital Switch' 0,0"
   ]
 
@@ -102,16 +102,16 @@ SectionDevice."Line" {
   EnableSequence [
 # Path
     cset "name='VPS Switch' 1"
-    cset "name='HPOUT2L Input 1' 15"
-    cset "name='HPOUT2R Input 1' 0"
+    cset "name='HPOUT2L Input 1' AIF1RX1"
+    cset "name='HPOUT2R Input 1' None"
     cset "name='HPOUT2 Digital Switch' 1,1"
   ]
 
   DisableSequence [
 # Path
     cset "name='VPS Switch' 0"
-    cset "name='HPOUT2L Input 1' 0"
-    cset "name='HPOUT2R Input 1' 0"
+    cset "name='HPOUT2L Input 1' None"
+    cset "name='HPOUT2R Input 1' None"
     cset "name='HPOUT2 Digital Switch' 0,0"
   ]
   Value {
@@ -125,13 +125,13 @@ SectionDevice."HDMI" {
   EnableSequence [
 # Path
     cset "name='HDMI Switch' 1"
-    cset "name='SPKOUTL Input 1' 15"
+    cset "name='SPKOUTL Input 1' AIF1RX1"
   ]
 
   DisableSequence [
 # Path
     cset "name='HDMI Switch' 0"
-    cset "name='SPKOUTL Input 1' 0"
+    cset "name='SPKOUTL Input 1' None"
   ]
 
   Value {
@@ -147,13 +147,13 @@ SectionDevice."Bluetooth" {
     cset "name='AIF3TX1 Input 1 Volume' 32"
     cset "name='AIF1TX1 Input 1 Volume' 32"
 # Path
-    cset "name='AIF3TX1 Input 1' 15"
-    cset "name='AIF1TX1 Input 1' 29"
+    cset "name='AIF3TX1 Input 1' AIF1RX1"
+    cset "name='AIF1TX1 Input 1' AIF3RX1"
   ]
 
   DisableSequence [
-    cset "name='AIF3TX1 Input 1' 0"
-    cset "name='AIF1TX1 Input 1' 0"
+    cset "name='AIF3TX1 Input 1' None"
+    cset "name='AIF1TX1 Input 1' None"
   ]
 
   Value {
@@ -173,7 +173,7 @@ SectionDevice."MainMic" {
     cset "name='Main Mic Switch' 1"
     cset "name='IN1 OSR' 0"
     cset "name='IN1R HPF Switch' 1"
-    cset "name='AIF1TX1 Input 1' 8"
+    cset "name='AIF1TX1 Input 1' IN1R"
   ]
 
   DisableSequence [
@@ -181,7 +181,7 @@ SectionDevice."MainMic" {
     cset "name='Main Mic Switch' 0"
     cset "name='IN1 OSR' 1"
     cset "name='IN1R HPF Switch' 0"
-    cset "name='AIF1TX1 Input 1' 0"
+    cset "name='AIF1TX1 Input 1' None"
   ]
 
   Value {
@@ -200,7 +200,7 @@ SectionDevice."SubMic" {
     cset "name='Sub Mic Switch' 1"
     cset "name='IN3 OSR' 0"
     cset "name='IN3L HPF Switch' 1"
-    cset "name='AIF1TX1 Input 1' 11"
+    cset "name='AIF1TX1 Input 1' IN3L"
   ]
 
   DisableSequence [
@@ -208,7 +208,7 @@ SectionDevice."SubMic" {
     cset "name='Sub Mic Switch' 0"
     cset "name='IN3 OSR' 1"
     cset "name='IN3L HPF Switch' 0"
-    cset "name='AIF1TX1 Input 1' 0"
+    cset "name='AIF1TX1 Input 1' None"
   ]
 
   Value {
@@ -227,7 +227,7 @@ SectionDevice."ThirdMic" {
     cset "name='Third Mic Switch' 1"
     cset "name='IN3 OSR' 0"
     cset "name='IN3R HPF Switch' 1"
-    cset "name='AIF1TX1 Input 1' 12"
+    cset "name='AIF1TX1 Input 1' IN3R"
   ]
 
   DisableSequence [
@@ -235,7 +235,7 @@ SectionDevice."ThirdMic" {
     cset "name='Third Mic Switch' 0"
     cset "name='IN3 OSR' 1"
     cset "name='IN3R HPF Switch' 0"
-    cset "name='AIF1TX1 Input 1' 0"
+    cset "name='AIF1TX1 Input 1' None"
   ]
 
   Value {
@@ -252,13 +252,13 @@ SectionDevice."HeadsetMic" {
     cset "name='IN2R Volume' 32"
 # Path
     cset "name='Headset Mic Switch' 1"
-    cset "name='AIF1TX1 Input 1' 10"
+    cset "name='AIF1TX1 Input 1' IN2R"
   ]
 
   DisableSequence [
 # Path
     cset "name='Headset Mic Switch' 0"
-    cset "name='AIF1TX1 Input 1' 0"
+    cset "name='AIF1TX1 Input 1' None"
   ]
 
   Value {
